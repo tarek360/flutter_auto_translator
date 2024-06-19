@@ -230,7 +230,7 @@ Future<void> _translate(Map<String, dynamic> config) async {
     final toTranslate =
         Map<String, dynamic>.from(modifiedTemplates[templatePath]!);
     final previousTranslations = <String, String>{};
-    final arbFile = File('$arbDir/${name}_$target.arb');
+    final arbFile = File('$arbDir/${name}_${target.replaceAll('-', '_')}.arb');
     var previousTranslationsCount = 0;
     if (arbFile.existsSync()) {
       // cast {} to string to handle arb comments
